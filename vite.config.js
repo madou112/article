@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+	base:"/article/",
 	plugins: [vue()],
 	transpileDependencies: true,
 	publicPath: "./",
@@ -12,7 +13,7 @@ export default defineConfig({
 		open: true,
 		proxy: {
 			'/api': {
-				target: "http://api.jqrjq.cn/",
+				target: "https://api.jqrjq.cn/",
 				ws: true,
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, ''),
